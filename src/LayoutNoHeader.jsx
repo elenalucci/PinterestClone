@@ -1,3 +1,6 @@
+import Sidebar from "./components/Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
+
 function LayoutNoHeader() {
   return (
     <div className="flex h-screen">
@@ -9,3 +12,5 @@ function LayoutNoHeader() {
     </div>
   );
 }
+
+export default LayoutNoHeader;
