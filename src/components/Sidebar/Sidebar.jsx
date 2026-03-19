@@ -11,6 +11,7 @@ function Sidebar (){
     const [isCreateOpen, setCreateOpen] = useState(false);
 
     return(
+        //TODO: fixed sidebar
         <aside className="flex flex-col items-center w-20 bg-neutral-50 border-r border-gray-400 gap-10">
             <IconButton icon = {pinterestLogo} label = "Home"/>
 

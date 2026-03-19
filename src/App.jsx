@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LayoutNoHeader from "./LayoutNoHeader";
-import BoardsPage from "./pages/BoardsPage";
-import PinsPage from "./pages/PinsPage";
+import BoardsPage from "./pages/BoardsPage/BoardsPage";
+import PinsPage from "./pages/PinsPage/PinsPage";
 
 export default function App() {
   return (
