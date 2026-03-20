@@ -6,17 +6,23 @@ import { useState } from "react";
 import DisplayIcon from "../shared/DisplayIcon";
 import pinIcon from "../../assets/pin.png";
 import boardIcon from "../../assets/boards.png";
+import { useNavigate, NavLink} from "react-router-dom";
+
 
 function Sidebar (){
     const [isCreateOpen, setCreateOpen] = useState(false);
+    const navigate = useNavigate();
 
     return(
         //TODO: fixed sidebar
         <aside className="flex flex-col items-center w-20 bg-neutral-50 border-r border-gray-400 gap-10">
-            <IconButton icon = {pinterestLogo} label = "Home"/>
-
-            <IconButton icon = {homeIcon} label = "Home"/>
-
+            <NavLink to="/">
+                <IconButton icon = {pinterestLogo} label = "Home"/>
+            </NavLink>
+            <NavLink to="/">
+                <IconButton icon = {homeIcon} label = "Home"/>
+            </NavLink> 
+            
             <div className="relative inline-flex">
                 <IconButton 
                         icon = {createIcon} 
@@ -30,7 +36,12 @@ function Sidebar (){
                                 Create
                             </span>
                             <div className="flex flex-col justify-evenly px-3 py-2">
-                                <button className="flex items-center text-left rounded-lg hover:bg-zinc-200 h-20 cursor-pointer">
+                                <button className="flex items-center text-left rounded-lg hover:bg-zinc-200 h-20 cursor-pointer"
+                                    onClick={() => {
+                                        navigate("/create-pin");
+                                        setCreateOpen(false);
+                                    }}
+                                >
                                     <DisplayIcon icon = {pinIcon}/>
                                     <div className="flex flex-col ml-2">
                                         <span className=" font-semibold">Pins</span>

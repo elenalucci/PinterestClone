@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LayoutNoHeader />}>
-        <Route index element={<BoardsPage />}/>
+        <Route index element={<PinsPage pins={pins}/>}/>
         <Route path="boards" element={<BoardsPage />} />
         <Route path="pins" element={<PinsPage pins={pins}/>}/>
         <Route path="create-pin" element={<CreatePinPage setPins={setPins}/>}/>
