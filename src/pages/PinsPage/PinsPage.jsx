@@ -1,9 +1,8 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import pins from "../../data/pinsData";
 import PinCard from "./PinCard";
 
-function PinsPage(){
+function PinsPage({pins}){
     return(
     <div className="flex flex-1 flex-col">
         <div>
