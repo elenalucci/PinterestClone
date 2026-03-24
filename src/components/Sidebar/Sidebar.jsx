@@ -31,7 +31,7 @@ function Sidebar (){
                     />
 
                     {isCreateOpen && (
-                        <div className="absolute left-full top-1/2 -translate-y-1/2 ml-8 bg-zinc-50 h-56 w-88 rounded-xl flex flex-col shadow-md ">
+                        <div className="absolute left-full top-1/2 -translate-y-1/2 ml-8 bg-zinc-50 h-56 w-88 rounded-xl flex flex-col shadow-md z-100">
                             <span className="ml-5 mt-3 font-semibold text-2xl"> 
                                 Create
                             </span>
