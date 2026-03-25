@@ -3,7 +3,7 @@ import ProfileContainer from "./ProfileContainer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function HeaderRightGroup(){
+function HeaderRightGroup({onOpenCreateBoard}){
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -36,6 +36,10 @@ function HeaderRightGroup(){
                         <button
                             type="button"
                             className="text-left px-3 rounded-lg py-2 hover:bg-zinc-200 cursor-pointer"
+                            onClick={()=>{
+                                onOpenCreateBoard();
+                                setIsOpen(false);
+                            }}
                         >
                         Board
                         </button>

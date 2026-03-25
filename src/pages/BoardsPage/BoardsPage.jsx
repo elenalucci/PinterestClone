@@ -1,15 +1,19 @@
 import React from "react";
 import Header from "../../components/Header/Header";
+import BoardCard from "./BoardCard";
 
-function BoardsPage(){
+function BoardsPage({onOpenCreateBoard, boards}){
+    console.log(boards);
     return(
        <div className="flex flex-1 flex-col">
                 <div>
-                    <Header />
+                    <Header onOpenCreateBoard={onOpenCreateBoard}/>
                 </div>
-        <h1>
-            
-        </h1>
+            {boards.map((board) =>(                
+                    <div key={board.id} className="mb-4 break-inside-avoid">
+                        <BoardCard board={board} />
+                    </div>
+            ))}
         </div>
     );
 }

@@ -4,13 +4,13 @@ import PinCard from "./PinCard";
 import { useState } from "react";
 import PinView from "./PinView";
 
-function PinsPage({pins}){
+function PinsPage({pins, onOpenCreateBoard}){
     const [selectedPin, setSelectedPin] = useState(null);
 
     return(
     <div className="flex flex-1 flex-col">
         <div>
-            <Header />
+            <Header onOpenCreateBoard={onOpenCreateBoard}/>
         </div>
         
         <div>

@@ -1,7 +1,9 @@
-function BoardCard(){
+function BoardCard({board}){
     return(
-        <>
-        </>
+        <div>
+            {board.name}
+        </div>
+        
     );
 }
 

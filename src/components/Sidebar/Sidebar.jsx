@@ -8,8 +8,7 @@ import pinIcon from "../../assets/pin.png";
 import boardIcon from "../../assets/boards.png";
 import { useNavigate, NavLink} from "react-router-dom";
 
-
-function Sidebar (){
+function Sidebar ({onOpenCreateBoard}){
     const [isCreateOpen, setCreateOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -49,7 +48,12 @@ function Sidebar (){
                                     </div>
                                 </button>
                         
-                                <button className="flex items-center text-left rounded-lg hover:bg-zinc-200 h-20 cursor-pointer">
+                                <button className="flex items-center text-left rounded-lg hover:bg-zinc-200 h-20 cursor-pointer"
+                                    onClick={() => {
+                                        onOpenCreateBoard();
+                                        setCreateOpen(false);
+                                    }}
+                                >
                                     <DisplayIcon icon = {boardIcon}/>
                                     <div className="flex flex-col ml-2">
                                         <span className=" font-semibold">Board</span>

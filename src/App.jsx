@@ -28,10 +28,36 @@ export default function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<LayoutNoHeader onOpenCreateBoard={openCreateBoard}/>}>
-        <Route index element={<PinsPage pins={pins}/>}/>
-        <Route path="boards" element={<BoardsPage boards={boards} setBoards={setBoards} onOpenCreateBoard={openCreateBoard}/>} />
-        <Route path="pins" element={<PinsPage pins={pins}/>}/>
+      <Route 
+        path="/" 
+        element={<LayoutNoHeader onOpenCreateBoard={openCreateBoard}/>}>
+        <Route 
+          index element={
+            <PinsPage 
+              pins={pins} 
+              onOpenCreateBoard={openCreateBoard}
+            />
+        }
+        />
+        <Route 
+          path="boards" 
+          element={
+            <BoardsPage 
+              boards={boards} 
+              setBoards={setBoards} 
+              onOpenCreateBoard={openCreateBoard}
+            />
+          } 
+        />
+        <Route 
+          path="pins" 
+          element={
+            <PinsPage 
+              pins={pins} 
+              onOpenCreateBoard={openCreateBoard}
+            />
+          }
+        />
         <Route path="create-pin" element={<CreatePinPage setPins={setPins}/>}/>
       </Route>
     </Routes>
@@ -39,10 +65,10 @@ export default function App() {
     {isCreateBoardOpen && (
       <CreateBoardModal 
         onClose={closeCreateBoard}
-        onOpenCreateBoard={handleCreateBoard}
+        onCreateBoard={handleCreateBoard}
       />
     )}
-    
+
   </>
   );
 }
