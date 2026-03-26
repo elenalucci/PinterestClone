@@ -37,7 +37,7 @@ function CreatePinPage({setPins}){
 
                         <Button 
                             color="bg-red-500 text-white hover:bg-red-700"
-                            className= ""
+                            className= "w-20 h-12"
                             name = "Publish"
                             onClick = {handlePublish}
                         />

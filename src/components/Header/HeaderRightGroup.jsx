@@ -15,7 +15,7 @@ function HeaderRightGroup({onOpenCreateBoard}){
             <div className= "relative inline-flex mt-12 ml-auto mr-32">
                 <Button 
                     color="bg-red-500 text-white hover:bg-red-700"
-                    className= ""
+                    className= "w-20 h-12"
                     name = "Create"
                     onClick={() => setIsOpen(prev => !prev)}
                 />

@@ -7,7 +7,7 @@ function Button({color, className, name, onClick}){
         <>
             <button
                 type="button" 
-                className={`font-semibold w-20 h-12 rounded-xl cursor-pointer ${color} ${className}`} 
+                className={`font-semibold rounded-xl cursor-pointer ${color} ${className}`} 
                 onClick={onClick}
                 >
                 {name}

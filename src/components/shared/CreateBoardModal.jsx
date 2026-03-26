@@ -32,7 +32,7 @@ function CreateBoardModal({onClose, onCreateBoard}){
 
             <Button 
                 color="bg-red-500 text-white hover:bg-red-700"
-                className= ""
+                className= "w-20 h-12"
                 name = "Create"
                 onClick = {handleCreate}
             />
