@@ -6,12 +6,15 @@ import PinsPage from "./pages/PinsPage/PinsPage";
 import CreatePinPage from "./pages/CreatePinPage/CreatePinPage";
 import initialPins from "./data/pinsData";
 import CreateBoardModal from "./components/shared/CreateBoardModal";
+import SavePinModal from "./components/shared/SavePinModal";
 
 export default function App() {
 
   const [pins, setPins] = useState(initialPins);
   const [boards, setBoards] = useState([]);
   const [isCreateBoardOpen, setIsCreateBoardOpen] = useState(false);
+  const [isSavePinOpen, setIsSavePinOpen] = useState(false);
+  const [selectedPin, setSelectedPin] = useState(null);
 
   function openCreateBoard(){
     setIsCreateBoardOpen(true);
@@ -25,6 +28,31 @@ export default function App() {
     setBoards((prev) => [...prev, newBoard]);
   }
 
+  function openSavePin(pin){
+    setIsSavePinOpen(true);
+    setSelectedPin(pin);
+  }
+
+  function closeSavePin(){
+    setIsSavePinOpen(false);
+    setSelectedPin(null);
+  }
+
+  function handleSavePinToBoard(pin, boardId){
+    setBoards((prevBoards) =>
+      prevBoards.map((board) => {
+        if(board.id === boardId){
+          return {
+            ...board,
+            pins: [...board.pins, pin],
+          };
+        }
+        return board;
+      })
+    );
+    closeSavePin();
+  }
+
   return (
     <>
     <Routes>
@@ -34,8 +62,10 @@ export default function App() {
         <Route 
           index element={
             <PinsPage 
-              pins={pins} 
+              pins={pins}
+              boards={boards}  
               onOpenCreateBoard={openCreateBoard}
+              onOpenSavePin={openSavePin}
             />
         }
         />
@@ -51,10 +81,12 @@ export default function App() {
         />
         <Route 
           path="pins" 
-          element={
+          element={ 
             <PinsPage 
-              pins={pins} 
+              pins={pins}
+              boards={boards}  
               onOpenCreateBoard={openCreateBoard}
+              onOpenSavePin={openSavePin}
             />
           }
         />
@@ -66,6 +98,15 @@ export default function App() {
       <CreateBoardModal 
         onClose={closeCreateBoard}
         onCreateBoard={handleCreateBoard}
+      />
+    )}
+
+    {isSavePinOpen && selectedPin && (
+      <SavePinModal
+        pin={selectedPin}
+        boards={boards}
+        onClose={closeSavePin}
+        onSavePin={handleSavePinToBoard}
       />
     )}
 

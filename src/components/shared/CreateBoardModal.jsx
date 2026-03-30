@@ -15,31 +15,31 @@ function CreateBoardModal({onClose, onCreateBoard}){
     }
 
     return (
-    <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center"
-      onClick={onClose}
-    >
         <div
-            className="bg-white w-175 h-175 flex overflow-y-auto p-6 rounded-xl flex flex-col"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center"
+            onClick={onClose}
         >
-            <input 
-                type="text "
-                placeholder="Name your board"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
+            <div
+                className="bg-white w-175 h-175 flex overflow-y-auto p-6 rounded-xl flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <input 
+                    type="text "
+                    placeholder="Name your board"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
 
-            <Button 
-                color="bg-red-500 text-white hover:bg-red-700"
-                className= "w-20 h-12"
-                name = "Create"
-                onClick = {handleCreate}
-            />
+                <Button 
+                    color="bg-red-500 text-white hover:bg-red-700"
+                    className= "w-20 h-12"
+                    name = "Create"
+                    onClick = {handleCreate}
+                />
 
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 }
 
 export default CreateBoardModal;

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 function HeaderRightGroup({onOpenCreateBoard}){
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
-
     
     return (
     <div className="flex-1 flex justify-end bg-neutral-50 p-4">

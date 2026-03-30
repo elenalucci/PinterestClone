@@ -1,6 +1,6 @@
 import Button from "../../components/shared/Button";
 
-function PinView({ pin, onClose }) {
+function PinView({ pin, onClose, onOpenSavePin}) {
   return (
     <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center"
@@ -15,7 +15,11 @@ function PinView({ pin, onClose }) {
                     color="bg-red-500 text-white hover:bg-red-700"
                     className= "w-20 h-12"
                     name = "Save"
-                    //to do onclick
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onClose(); 
+                        onOpenSavePin(pin);
+                    }}
                 />
             </div>
             <div  className="h-124 p-6 flex items-center justify-center bg-white">

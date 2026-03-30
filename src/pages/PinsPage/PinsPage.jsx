@@ -4,7 +4,7 @@ import PinCard from "./PinCard";
 import { useState } from "react";
 import PinView from "./PinView";
 
-function PinsPage({pins, onOpenCreateBoard}){
+function PinsPage({pins, onOpenCreateBoard, onOpenSavePin}){
     const [selectedPin, setSelectedPin] = useState(null);
 
     return(
@@ -17,7 +17,11 @@ function PinsPage({pins, onOpenCreateBoard}){
             <div className="columns-[200px]">
                 {pins.map((pin) =>(                
                     <div key={pin.id} className="mb-4 break-inside-avoid">
-                        <PinCard pin={pin} onClick={() => setSelectedPin(pin)} />
+                        <PinCard 
+                            pin={pin} 
+                            onClick={() => setSelectedPin(pin)} 
+                            onOpenSavePin={onOpenSavePin}
+                        />
                     </div>
                 ))}
             </div>
@@ -25,6 +29,7 @@ function PinsPage({pins, onOpenCreateBoard}){
                 <PinView
                     pin={selectedPin}
                     onClose={() => setSelectedPin(null)}
+                    onOpenSavePin={onOpenSavePin}
                 />
             )}
         </div>
