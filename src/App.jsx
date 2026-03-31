@@ -7,6 +7,7 @@ import CreatePinPage from "./pages/CreatePinPage/CreatePinPage";
 import initialPins from "./data/pinsData";
 import CreateBoardModal from "./components/shared/CreateBoardModal";
 import SavePinModal from "./components/shared/SavePinModal";
+import BoardViewPage from "./pages/BoardViewPage/BoardViewPage";
 
 export default function App() {
 
@@ -78,6 +79,10 @@ export default function App() {
               onOpenCreateBoard={openCreateBoard}
             />
           } 
+        />
+        <Route 
+          path="boards/:boardId"
+          element={<BoardViewPage boards={boards}/>}
         />
         <Route 
           path="pins" 

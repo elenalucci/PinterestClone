@@ -3,7 +3,6 @@ import Header from "../../components/Header/Header";
 import BoardCard from "./BoardCard";
 
 function BoardsPage({onOpenCreateBoard, boards}){
-    console.log(boards);
     return(
        <div className="flex flex-1 flex-col">
                 <div>

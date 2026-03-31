@@ -24,7 +24,7 @@ function CreateBoardModal({onClose, onCreateBoard}){
                 onClick={(e) => e.stopPropagation()}
             >
                 <input 
-                    type="text "
+                    type="text"
                     placeholder="Name your board"
                     value={name}
                     onChange={(e) => setName(e.target.value)}

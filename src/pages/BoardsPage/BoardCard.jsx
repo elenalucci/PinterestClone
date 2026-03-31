@@ -1,9 +1,12 @@
+import {Link} from "react-router-dom";
+
 function BoardCard({board}){
     return(
-        <div>
-            {board.name}
-        </div>
-        
+        <Link to={`/boards/${board.id}`}>
+            <div>
+                {board.name}
+            </div>
+        </Link>
     );
 }
 
