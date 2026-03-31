@@ -14,7 +14,7 @@ function Sidebar ({onOpenCreateBoard}){
 
     return(
         //TODO: fixed sidebar
-        <aside className="flex flex-col items-center w-20 bg-neutral-50 border-r border-gray-400 gap-10">
+        <aside className="sticky top-0 self-start flex flex-col items-center w-20 bg-neutral-50 border-r border-gray-400 gap-10 h-screen">
             <NavLink to="/">
                 <IconButton icon = {pinterestLogo} label = "Home"/>
             </NavLink>

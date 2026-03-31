@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import LayoutNoHeader from "./LayoutNoHeader";
+import LayoutNoHeader from "./Layout";
 import BoardsPage from "./pages/BoardsPage/BoardsPage";
 import PinsPage from "./pages/PinsPage/PinsPage";
 import CreatePinPage from "./pages/CreatePinPage/CreatePinPage";
@@ -82,7 +82,13 @@ export default function App() {
         />
         <Route 
           path="boards/:boardId"
-          element={<BoardViewPage boards={boards}/>}
+          element={
+            <BoardViewPage 
+              boards={boards}
+              onOpenSavePin={openSavePin}
+              onSavePin={handleSavePinToBoard}
+            />
+          }
         />
         <Route 
           path="pins" 
